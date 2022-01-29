@@ -1,13 +1,10 @@
-package com.njkol;
+package com.njkol.threadlocal;
 
 import org.junit.jupiter.api.Test;
 
-import com.njkol.threadlocal.MyRunnable;
-import com.njkol.threadlocal.Request;
-
 public class TestThreadLocal {
 
-	//@Test
+	@Test
 	public void testSimple() throws InterruptedException {
 		
 		MyRunnable sharedRunnableInstance = new MyRunnable();
@@ -35,7 +32,6 @@ public class TestThreadLocal {
 
 		thread1.join(); // wait for thread 1 to terminate
 		thread2.join(); // wait for thread 2 to terminate
-				
 	}
 	
 }
