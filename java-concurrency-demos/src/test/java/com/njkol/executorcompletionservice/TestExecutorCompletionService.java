@@ -10,7 +10,6 @@ import java.util.concurrent.*;
 public class TestExecutorCompletionService {
 
    private ExecutorService executorService;
-   private CompletionService<Integer> executorCompletionService;
 
     @BeforeEach
     public void setUp () {
