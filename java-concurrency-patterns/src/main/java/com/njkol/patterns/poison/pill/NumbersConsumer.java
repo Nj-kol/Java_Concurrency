@@ -1,4 +1,4 @@
-package com.njkol.poison.pill;
+package com.njkol.patterns.poison.pill;
 
 import java.util.concurrent.BlockingQueue;
 
