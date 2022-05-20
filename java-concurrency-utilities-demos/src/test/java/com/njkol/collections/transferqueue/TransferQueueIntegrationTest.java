@@ -1,19 +1,15 @@
-package com.njkol;
+package com.njkol.collections.transferqueue;
 
-import org.junit.FixMethodOrder;
-import org.junit.Ignore;
-import org.junit.Test;
-import org.junit.runners.MethodSorters;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.*;
 
-import static junit.framework.TestCase.assertEquals;
-
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TransferQueueIntegrationTest {
 
 	@Test
-	@Ignore
 	public void whenMultipleConsumersAndProducers_thenProcessAllMessages() throws InterruptedException {
 		
 		// given
@@ -59,7 +55,6 @@ public class TransferQueueIntegrationTest {
 	}
 
 	@Test
-	@Ignore
 	public void whenUseOneProducerAndNoConsumers_thenShouldFailWithTimeout() throws InterruptedException {
 		// given
 		TransferQueue<String> transferQueue = new LinkedTransferQueue<>();

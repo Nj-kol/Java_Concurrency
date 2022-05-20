@@ -1,4 +1,4 @@
-package com.njkol;
+package com.njkol.synchronizers.exchanger;
 
 import java.util.ArrayList;
 import java.util.List;

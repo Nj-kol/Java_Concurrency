@@ -1,4 +1,4 @@
-package com.njkol;
+package com.njkol.collections.transferqueue;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TransferQueue;

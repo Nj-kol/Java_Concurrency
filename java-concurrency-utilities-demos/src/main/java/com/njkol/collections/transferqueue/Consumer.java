@@ -1,4 +1,4 @@
-package com.njkol;
+package com.njkol.collections.transferqueue;
 
 import java.util.concurrent.TransferQueue;
 import java.util.concurrent.atomic.AtomicInteger;

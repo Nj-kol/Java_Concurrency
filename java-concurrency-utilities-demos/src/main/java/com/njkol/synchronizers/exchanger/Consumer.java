@@ -1,10 +1,10 @@
-package com.njkol;
+package com.njkol.synchronizers.exchanger;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.concurrent.Exchanger;
 
-public class Producer implements Runnable {
+public class Consumer implements Runnable {
 
 	private Exchanger<List<String>> exchanger;
 	private List<String> buffer;
@@ -17,8 +17,8 @@ public class Producer implements Runnable {
 	public void setActive(boolean isActive) {
 		this.isActive = isActive;
 	}
-
-	public Producer(Exchanger<List<String>> exchanger, List<String> buffer) {
+	
+	public Consumer(Exchanger<List<String>> exchanger, List<String> buffer) {
 		this.exchanger = exchanger;
 		this.buffer = buffer;
 	}
@@ -27,14 +27,13 @@ public class Producer implements Runnable {
 
 		while (isActive) {
 			try {
-				// create tasks & fill the queue
-				// exchange the full queue for a empty queue with Consumer
-				buffer = new ArrayList<String>();
-				buffer.add("My ");
-				buffer.add("name ");
-				buffer.add("is ");
-				buffer.add("Nilanjan ");
-				buffer.add("Sarkar ");
+				// do procesing & empty the queue
+				// exchange the empty queue for a full queue with Producer
+				ListIterator<String> iter = buffer.listIterator();
+				while (iter.hasNext()) {
+					System.out.println(iter.next());
+					iter.remove();
+				}
 				buffer = exchanger.exchange(buffer);
 				System.out.println(Thread.currentThread().getName() + " now has " + buffer.size() + " elements");
 			} catch (InterruptedException e) {
