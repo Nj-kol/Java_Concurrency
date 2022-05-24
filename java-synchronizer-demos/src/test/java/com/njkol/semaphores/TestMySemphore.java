@@ -1,4 +1,4 @@
-package com.njkol;
+package com.njkol.semaphores;
 
 import org.junit.jupiter.api.Test;
 
