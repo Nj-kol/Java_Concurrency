@@ -3,6 +3,8 @@ package com.njkol.collections.transferqueue;
 import java.util.concurrent.TransferQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import java.util.concurrent.locks.LockSupport;
+
 public class Consumer implements Runnable {
 
     private final TransferQueue<String> transferQueue;
