@@ -4,7 +4,13 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class BoundedBuffer {
+/**
+ * https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/concurrent/locks/Condition.html
+ * 
+ * @author Nilanjan
+ *
+ */
+public class BoundedBuffer<E> {
 
 	private final Lock lock = new ReentrantLock();
 	private final Condition notFull = lock.newCondition();
@@ -16,7 +22,7 @@ public class BoundedBuffer {
 		items = new Object[capacity];
 	}
 
-	public void put(Object x) throws InterruptedException {
+	public void put(E x) throws InterruptedException {
 		lock.lock();
 		try {
 			while (count == items.length) {
@@ -36,14 +42,14 @@ public class BoundedBuffer {
 		}
 	}
 
-	public Object take() throws InterruptedException {
+	public E take() throws InterruptedException {
 		lock.lock();
 		try {
 			while (count == 0) {
 				System.out.println(Thread.currentThread().getName() + " : Buffer is empty, waiting");
 				notEmpty.await();
 			}
-			Object value = items[takeptr];
+			E value = (E) items[takeptr];
 			System.out.printf("%s consumed %d from queue %n", Thread.currentThread().getName(), value);
 
 			if (++takeptr == items.length)

@@ -7,9 +7,9 @@ import org.junit.jupiter.api.Test;
 
 class Producer implements Runnable {
 
-	private BoundedBuffer buffer;
+	private BoundedBuffer<Integer> buffer;
 
-	public Producer(BoundedBuffer buffer) {
+	public Producer(BoundedBuffer<Integer> buffer) {
 		this.buffer = buffer;
 	}
 
@@ -29,9 +29,9 @@ class Producer implements Runnable {
 
 class Consumer implements Runnable {
 
-	private BoundedBuffer buffer;
+	private BoundedBuffer<Integer> buffer;
 
-	public Consumer(BoundedBuffer buffer) {
+	public Consumer(BoundedBuffer<Integer> buffer) {
 		this.buffer = buffer;
 	}
 
@@ -51,11 +51,11 @@ class Consumer implements Runnable {
 
 class BoundedBufferTest {
 
-	BoundedBuffer buffer;
+	BoundedBuffer<Integer> buffer;
 
 	@BeforeEach
 	void setUp() throws Exception {
-		buffer = new BoundedBuffer(10);
+		buffer = new BoundedBuffer<Integer>(10);
 	}
 
 	@Test
