@@ -1,4 +1,4 @@
-package com.njkol.atomic.abaproblem;
+package com.njkol.atomic.abaproblem.demo1;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;

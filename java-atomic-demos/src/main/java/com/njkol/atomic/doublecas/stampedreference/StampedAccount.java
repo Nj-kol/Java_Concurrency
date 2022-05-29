@@ -1,4 +1,4 @@
-package com.njkol.atomic.doublecas;
+package com.njkol.atomic.doublecas.stampedreference;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicStampedReference;

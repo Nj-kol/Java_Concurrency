@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
+import com.njkol.atomic.doublecas.stampedreference.StampedAccount;
+
 public class TestDoubleCAS {
 
 	@Test

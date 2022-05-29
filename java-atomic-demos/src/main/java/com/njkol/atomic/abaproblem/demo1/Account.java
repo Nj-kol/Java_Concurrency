@@ -1,4 +1,4 @@
-package com.njkol.atomic.abaproblem;
+package com.njkol.atomic.abaproblem.demo1;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
