@@ -22,3 +22,4 @@ metastore_db
 .gitsecret/keys/random_seed
 !*.secret
 profile.txtaddress.txtabc.txt
+address.txtprofile.txt
