@@ -19,3 +19,6 @@ metastore_db
 
 **/.DS_Store
 /.recommenders/
+.gitsecret/keys/random_seed
+!*.secret
+profile.txtaddress.txt
